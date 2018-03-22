@@ -1,5 +1,5 @@
 Git hello!
 again!
 test dev
-creat conflict 1
+new dev no ff
 
