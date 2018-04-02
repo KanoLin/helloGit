@@ -1,15 +1,15 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<string>
 #include<cstring>
 #include<algorithm>
 #include<cstdio>
 
 /*
-ÊäÈëµÚÒ»¸öÊı×ÖÎª×éÊın
-½ÓÏÂÀ´n×é£¬Ã¿×é¸ñÊ½
-+£¨-»ò*»ò/£©
-Êı×Ö1
-Êı×Ö2
+è¾“å…¥ç¬¬ä¸€ä¸ªæ•°å­—ä¸ºç»„æ•°n
+æ¥ä¸‹æ¥nç»„ï¼Œæ¯ç»„æ ¼å¼
++ï¼ˆ-æˆ–*æˆ–/ï¼‰
+æ•°å­—1
+æ•°å­—2
 */
 
 using namespace std;
@@ -23,23 +23,23 @@ struct node
 	}
 };
 
-//z1¡¢z2¶ÔÓ¦Á½ÊıÕûÊı²¿·Ö³¤¶È£»x1¡¢x2¶ÔÓ¦Á½ÊıĞ¡Êı²¿·Ö³¤¶È£»
-//zf1¡¢zf2¶ÔÓ¦Á½ÊıÕı¸ººÅ£¨0Õı1¸º£©£» zf¶ÔÓ¦½á¹ûÕı¸ººÅ£¨0Õı1¸º£©£»k¶ÔÓ¦½á¹û³¤¶È£»
+//z1ã€z2å¯¹åº”ä¸¤æ•°æ•´æ•°éƒ¨åˆ†é•¿åº¦ï¼›x1ã€x2å¯¹åº”ä¸¤æ•°å°æ•°éƒ¨åˆ†é•¿åº¦ï¼›
+//zf1ã€zf2å¯¹åº”ä¸¤æ•°æ­£è´Ÿå·ï¼ˆ0æ­£1è´Ÿï¼‰ï¼› zfå¯¹åº”ç»“æœæ­£è´Ÿå·ï¼ˆ0æ­£1è´Ÿï¼‰ï¼›kå¯¹åº”ç»“æœé•¿åº¦ï¼›
 int z1, z2, x1, x2, zf1, zf2, zf, k;
-//s1¡¢s2ÓÃÓÚÊäÈëÊ±´æ´¢Á½Êı
+//s1ã€s2ç”¨äºè¾“å…¥æ—¶å­˜å‚¨ä¸¤æ•°
 string s1, s2;
-//ÏÂÁĞÖ¸Õı·Ö±ğ¶ÔÓ¦¸÷ÊıÎ²ºÍÍ·
-//aa¡¢bbÎªÕıĞò´¢´æ£¬ccÎªµ¹Ğò´¢´æ
+//ä¸‹åˆ—æŒ‡æ­£åˆ†åˆ«å¯¹åº”å„æ•°å°¾å’Œå¤´
+//aaã€bbä¸ºæ­£åºå‚¨å­˜ï¼Œccä¸ºå€’åºå‚¨å­˜
 node *aa, *bb, *cc, *ha, *hb, *hc;
 
-//max()ÓÃÓÚ±È½Ï´óĞ¡
+//max()ç”¨äºæ¯”è¾ƒå¤§å°
 int max(int a, int b)
 {
 	if (a > b) return a;
 	else return b;
 }
 
-//link()ÓÃÓÚÁ¬½ÓÁ½¸öÁ´½á
+//link()ç”¨äºè¿æ¥ä¸¤ä¸ªé“¾ç»“
 void link(node *&a, node *&b)
 {
 	b->before = a;
@@ -47,7 +47,7 @@ void link(node *&a, node *&b)
 	a = b;
 }
 
-//build()ÓÃÓÚ½¨Á¢´¢´æÁ½ÊıµÄÁ´±íaa¡¢bb
+//build()ç”¨äºå»ºç«‹å‚¨å­˜ä¸¤æ•°çš„é“¾è¡¨aaã€bb
 void build()
 {
 	zf = z1 = z2 = x1 = x2 = zf1 = zf2 = 0;
@@ -88,7 +88,7 @@ void build()
 	if (x2 < 0)x2 = 0;
 }
 
-//patch()ÓÃÓÚĞ¡Êı²¹Æë³¤¶È
+//patch()ç”¨äºå°æ•°è¡¥é½é•¿åº¦
 void patch()
 {
 	if (x1 > x2) 
@@ -114,7 +114,7 @@ void patch()
 
 }
 
-//zeroAdd()ÓÃÓÚÄ©Î²²¹Áã
+//zeroAdd()ç”¨äºæœ«å°¾è¡¥é›¶
 void zeroAdd(node *&x,int t)
 {
 	for (int i = 1; i <= t; ++i)
@@ -125,7 +125,7 @@ void zeroAdd(node *&x,int t)
 	}
 }
 
-//clean()ÓÃÓÚÊÍ·ÅÁ´±í
+//clean()ç”¨äºé‡Šæ”¾é“¾è¡¨
 void clean(node *p)
 {
 	if (p == NULL)return;
@@ -139,7 +139,7 @@ void clean(node *p)
 	p = NULL;
 }
 
-//turn()ÓÃÓÚ·­×ªÁ´±í
+//turn()ç”¨äºç¿»è½¬é“¾è¡¨
 void turn(node *&hx, node *&xx)
 {
 	node *x = xx;
@@ -157,7 +157,7 @@ void turn(node *&hx, node *&xx)
 	hx = ht; xx = tt;
 }
 
-//errorCheck()ÓÃÓÚÅĞ¶Ï±»³ıÊıÊÇ·ñĞ¡ÓÚ10^-6
+//errorCheck()ç”¨äºåˆ¤æ–­è¢«é™¤æ•°æ˜¯å¦å°äº10^-6
 bool errorCheck(node *p, int lenz, int lenx)
 {
 	if (lenz > 1 || lenx < 7)return false;
@@ -169,7 +169,7 @@ bool errorCheck(node *p, int lenz, int lenx)
 	return true;
 }
 
-//judge()ÓÃÓÚÅĞ¶ÏÁ½Êı¾ø¶ÔÖµ´óĞ¡£¬1±íÊ¾aa´ó£¬2±íÊ¾bb´ó
+//judge()ç”¨äºåˆ¤æ–­ä¸¤æ•°ç»å¯¹å€¼å¤§å°ï¼Œ1è¡¨ç¤ºaaå¤§ï¼Œ2è¡¨ç¤ºbbå¤§
 int judge()
 {
 	if (z1 > z2)return 1;
@@ -187,7 +187,7 @@ int judge()
 }
 
 
-//add()ÓÃÓÚÁ½ÊıÏà¼Ó
+//add()ç”¨äºä¸¤æ•°ç›¸åŠ 
 void add()
 {
 	k = 0;
@@ -247,10 +247,10 @@ void add()
 		node *ss = new node;
 		ss->data = 1;
 		link(cc, ss);
-	}//´¦Àí×î¸ßÎ»´æÔÚ½øÎ»µÄÇé¿ö
+	}//å¤„ç†æœ€é«˜ä½å­˜åœ¨è¿›ä½çš„æƒ…å†µ
 }
 
-//subtract()ÓÃÓÚÁ½ÊıÏà¼õ£¬²¢ÇÒ±£Ö¤¾ø¶ÔÖµ´óµÄ¼õĞ¡µÄ
+//subtract()ç”¨äºä¸¤æ•°ç›¸å‡ï¼Œå¹¶ä¸”ä¿è¯ç»å¯¹å€¼å¤§çš„å‡å°çš„
 void subtract(node *aa,node *bb, int z1, int z2, int x1, int x2)
 {
 	k = 0;
@@ -293,18 +293,24 @@ void subtract(node *aa,node *bb, int z1, int z2, int x1, int x2)
 		aa = aa->before;
 		i--;
 	}
-	if (cc->data == 0) {k--; cc = cc->before;}//´¦Àí×î¸ßÎ»Îª0µÄÇé¿ö
+	while (cc->data == 0 && k > max(x1, x2) + 1)
+	{
+		k--;
+		cc = cc->before;
+		delete cc->next;
+		cc->next = NULL;
+	}//å¤„ç†ç›¸å‡åé«˜ä½æ•°ä¸º0çš„æƒ…å†µ
 }
 
-//multiply()ÓÃÓÚÁ½ÊıÓĞĞ§Î»ÊıÏà³Ë
+//multiply()ç”¨äºä¸¤æ•°æœ‰æ•ˆä½æ•°ç›¸ä¹˜
 void multiply()
 {
-	node *linkA=aa,*linkB=bb,*linkC,*ha0=ha,*hb0=hb;//linkA/B/CÓÃÓÚ³Ë·¨²Ù×÷Ê±¸ü¸ÄÎ»ÖÃ
+	node *linkA=aa,*linkB=bb,*linkC,*ha0=ha,*hb0=hb;//linkA/B/Cç”¨äºä¹˜æ³•æ“ä½œæ—¶æ›´æ”¹ä½ç½®
 	int len1 = z1 + x1, len2 = z2 + x2;
 	if (z1 == 0)len1++;
 	if (z2 == 0)len2++;
-	while (ha0->data == 0) { ha0 = ha0->next; len1--; }//È¥³ıĞ¡ÊıÓĞĞ§Î»ÊıÇ°µÄ0Êı
-	while (hb0->data == 0) { hb0 = hb0->next; len2--; }//Ïàµ±ÓÚĞ¡ÊıµãºóÒÆ
+	while (ha0->data == 0) { ha0 = ha0->next; len1--; }//å»é™¤å°æ•°æœ‰æ•ˆä½æ•°å‰çš„0æ•°
+	while (hb0->data == 0) { hb0 = hb0->next; len2--; }//ç›¸å½“äºå°æ•°ç‚¹åç§»
 	for (int i = 1; i <= len1 + len2; ++i)
 	{
 		k++;
@@ -348,10 +354,10 @@ void multiply()
 	}
 }
 
-//divide()ÓÃÓÚ³ı·¨
+//divide()ç”¨äºé™¤æ³•
 void divide()
 {
-	while (ha->data == 0) { ha = ha->next; delete ha->before; ha->before = NULL; z1--; }//È¥³ıĞ¡ÊıÓĞĞ§Î»ÊıÇ°µÄ0Êı
+	while (ha->data == 0) { ha = ha->next; delete ha->before; ha->before = NULL; z1--; }//å»é™¤å°æ•°æœ‰æ•ˆä½æ•°å‰çš„0æ•°
 	while (hb->data == 0) { hb = hb->next; delete hb->before; hb->before = NULL; z2--; }
 	z1 += x1; z2 += x2; x1 = x2 = 0;
 	zeroAdd(aa, 11);
@@ -438,14 +444,14 @@ void divide()
 	k = kd;hc = hd; cc = dd;x1 = x2 = 10;
 }
 
-//output()ÓÃÓÚÊä³ö
+//output()ç”¨äºè¾“å‡º
 void output()
 {
 	if (k == 0) return;
 	int k2 = 1;
 	if (zf)cout << '-';
 	int t = 1;
-	while (hc->data == 0 && k2 <= max(x1, x2))//´Ë´¦ÎªÈ·±£Ğ¡ÊıÄ©Î²¶àÓà0²»Êä³ö
+	while (hc->data == 0 && k2 <= max(x1, x2))//æ­¤å¤„ä¸ºç¡®ä¿å°æ•°æœ«å°¾å¤šä½™0ä¸è¾“å‡º
 	{
 		k2++;
 		hc = hc->next;
@@ -471,9 +477,9 @@ int main()
 		ha = hb = hc = aa = bb = cc = NULL;
 		k = 0;
 		build();
-		int jud = judge(); //jud´¢´æÁ½Êı´óĞ¡ÅĞ¶Ï½á¹û
+		int jud = judge(); //judå‚¨å­˜ä¸¤æ•°å¤§å°åˆ¤æ–­ç»“æœ
 		zf = 0;
-		switch (s)//ÅĞ¶Ï¼Ó¼õ·¨£¬²¢ÓÅÏÈ´¦ÀíÕı¸ºÇé¿ö
+		switch (s)//åˆ¤æ–­åŠ å‡æ³•ï¼Œå¹¶ä¼˜å…ˆå¤„ç†æ­£è´Ÿæƒ…å†µ
 		{
 		case '+': {
 			patch();
